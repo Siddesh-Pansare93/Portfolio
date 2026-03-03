@@ -1,0 +1,285 @@
+{
+    "nav": {
+        "logo": {
+            "highlight": "S",
+            "rest": "P"
+        },
+        "links": [
+            "About",
+            "Experience",
+            "Projects",
+            "Skills",
+            "Contact"
+        ],
+        "cta": "Let's Talk"
+    },
+    "hero": {
+        "label": "SWE · AVAILABLE MAR 2026",
+        "firstName": "SIDDESH",
+        "lastName": "PANSARE",
+        "role": "AI-Native Full-Stack Engineer",
+        "description": "Building production systems at the intersection of real-time infrastructure and autonomous AI agents. Deploys to production.",
+        "ctaPrimary": "View My Work",
+        "ctaSecondary": "GitHub ↗",
+        "stats": [
+            {
+                "value": "2",
+                "label": "Hackathon Wins"
+            },
+            {
+                "value": "9.0",
+                "label": "CGPA"
+            }
+        ],
+        "codeSnippet": {
+            "filename": "peer-connect.ts",
+            "comment1": "// WebRTC signaling interface",
+            "comment2": "// Match users anonymously"
+        }
+    },
+    "about": {
+        "sectionNumber": "01",
+        "title": "I build things that run at scale.",
+        "paragraphs": [
+            "Computer Engineering student graduating May 2026 from Navi Mumbai. Currently leading Flutter development at Kstars Technology - Clean Architecture, SOLID, multi-platform. Before that, Redis pub/sub queues, distributed job systems, and OCR pipelines at DevionX.",
+            "My work sits at the intersection of real-time communication and autonomous agents. I've shipped a WebRTC platform to users, built AI agents that manage on-chain DeFi portfolios, and explored Model Context Protocol for next-gen AI infrastructure - all while the semester's still running.",
+            "9.0 CGPA, Honours in Blockchain. 2 hackathon wins. I build because I'm curious."
+        ],
+        "highlights": [
+            "Clean Architecture",
+            "Real-Time Systems",
+            "AI Integration"
+        ],
+        "terminalStats": [
+            {
+                "command": "$ node -e \"console.log(langs)\"",
+                "result": "→ [ 'TS', 'JS', 'Dart', 'Py', 'Sol', 'Move' ]"
+            },
+            {
+                "command": "$ echo $CGPA",
+                "result": "→ 9.0 / 10.0"
+            }
+        ]
+    },
+    "experience": {
+        "sectionNumber": "02",
+        "items": [
+            {
+                "id": 1,
+                "company": "Kstars Technology LLP",
+                "period": "Jan 2026–Present",
+                "role": "Lead Flutter Developer",
+                "tech": "Flutter · Clean Architecture · SOLID · React · PWA",
+                "highlights": [
+                    "Leading multi-platform Flutter app with Clean Architecture and SOLID principles across iOS and Android.",
+                    "Optimized React web app performance -achieved 20% reduction in load time.",
+                    "Built and shipped PWA version, improving accessibility."
+                ],
+                "current": true
+            },
+            {
+                "id": 2,
+                "company": "DevionX Technologies",
+                "period": "Jun 2025–Dec 2025",
+                "role": "Backend & AI Engineer Intern",
+                "tech": "Redis · BullMQ · Gemini API · OCR · Node.js",
+                "highlights": [
+                    "Built real-time stock alert service using Redis pub/sub, BullMQ job queues, and Gemini API.",
+                    "Developed multi-vendor e-commerce platform with modular architecture.",
+                    "Implemented OCR-based Aadhaar masking system for secure processing.",
+                    "Collaborated on SaaS dashboards for internal tools."
+                ],
+                "current": false
+            }
+        ]
+    },
+    "projects": {
+        "sectionNumber": "03",
+        "githubUrl": "https://github.com/Siddesh-Pansare93",
+        "githubText": "View all repositories on GitHub →",
+        "items": {
+            "featured": {
+                "title": "Anonymous Chat Platform",
+                "badge": "PRODUCTION · WEBRTC",
+                "description": "Real-time anonymous video and text chat built on WebRTC and Socket.io. Stripe payments, sub-100ms latency, high concurrency backend.",
+                "tech": "WebRTC / Socket.io / Node.js / Express / Stripe / MongoDB",
+                "link": "#"
+            },
+            "defi": {
+                "title": "DeFi Portfolio Management Agents ⚡",
+                "badge": "AI AGENTS · BLOCKCHAIN",
+                "description": "Autonomous AI agents managing DeFi portfolios on-chain. TypeScript agents + Solidity smart contracts. LangChain orchestration.",
+                "tech": "TypeScript / Solidity / LangChain / AI Agents"
+            },
+            "skill": {
+                "title": "Skill Vultures",
+                "badge": "EDTECH · FULLSTACK",
+                "description": "Full-stack platform with interactive learning modules, live video sessions, and assessments. Built with MERN stack.",
+                "tech": "MERN / Redux / AWS"
+            },
+            "smart": {
+                "title": "SmartBite",
+                "badge": "AI · MOBILE",
+                "description": "React Native nutrition tracker with OpenAI API integration. Analyzes eating patterns for meal recommendations.",
+                "tech": "React Native / Node.js / OpenAI API"
+            },
+            "kisaan": {
+                "title": "Kisaan-Sarthi",
+                "badge": "AGRITECH · ML PIPELINE",
+                "description": "AI-powered agricultural assistant. Full-stack TypeScript app with Python ML pipeline for crop prediction.",
+                "tech": "TypeScript / Python / Jupyter"
+            }
+        }
+    },
+    "skills": {
+        "sectionNumber": "04",
+        "categories": {
+            "ai": {
+                "title": "AI & Agents",
+                "tags": [
+                    "LangChain",
+                    "OpenAI API",
+                    "Gemini API",
+                    "MCP Protocol",
+                    "AI Agents",
+                    "RAG"
+                ],
+                "description": "Building with LangChain, MCP Protocol, and autonomous agent architectures -not just API calls."
+            },
+            "blockchain": {
+                "title": "Blockchain",
+                "tags": [
+                    "Solidity",
+                    "Aptos Move",
+                    "Smart Contracts",
+                    "DeFi",
+                    "EVM"
+                ],
+                "description": "B.E. Blockchain Honours track -active on EVM + Move."
+            },
+            "languages": {
+                "title": "Languages",
+                "tags": [
+                    "TypeScript",
+                    "JavaScript",
+                    "Python",
+                    "Dart",
+                    "Solidity",
+                    "C++"
+                ],
+                "note": "TypeScript-first"
+            },
+            "frontend": {
+                "title": "Frontend",
+                "tags": [
+                    "React.js",
+                    "Next.js",
+                    "React Native",
+                    "Flutter",
+                    "Tailwind CSS",
+                    "Framer Motion"
+                ]
+            },
+            "backend": {
+                "title": "Backend",
+                "tags": [
+                    "Node.js",
+                    "Express",
+                    "REST",
+                    "WebSockets",
+                    "BullMQ"
+                ]
+            },
+            "databases": {
+                "title": "Databases",
+                "tags": [
+                    "MongoDB",
+                    "PostgreSQL",
+                    "Firebase",
+                    "Redis"
+                ]
+            },
+            "cloud": {
+                "title": "Cloud & DevOps",
+                "tags": [
+                    "AWS",
+                    "Docker",
+                    "VPS",
+                    "Vercel",
+                    "CI/CD",
+                    "Git"
+                ]
+            }
+        },
+        "marquee": [
+            "Clean Architecture",
+            "SOLID",
+            "Microservices",
+            "MVC",
+            "REST API Design",
+            "State Management",
+            "Modular Design",
+            "DRY"
+        ]
+    },
+    "philosophy": {
+        "sectionNumber": "05",
+        "quote": "Engineering is the art of making the complex feel inevitable.",
+        "principles": [
+            {
+                "id": "01",
+                "title": "Systems Over Symptoms",
+                "text": "Quick fixes create technical debt. I focus on building resilient pipelines and architectures that prevent problems rather than treating them after they appear."
+            },
+            {
+                "id": "02",
+                "title": "Latency is the Enemy",
+                "text": "Whether it's WebRTC peer connections or AI agent thought loops, sub-100ms response times aren't a luxury—they are the baseline for immersive experiences."
+            },
+            {
+                "id": "03",
+                "title": "Autonomous by Default",
+                "text": "Using tools like LangChain and MCP isn't about slapping an LLM wrapper on an API. It's about orchestration, dynamic context handling, and building tools that reason."
+            }
+        ]
+    },
+    "contact": {
+        "sectionNumber": "06",
+        "title": "Let's build something.",
+        "subtitle": "I'm open to roles, ideas, and interesting technical conversations.",
+        "status": "Open to full-time · Graduating May 2026",
+        "email": "siddeshpansare207@gmail.com",
+        "linkedin": "linkedin.com/in/siddeshpansare93",
+        "github": "Siddesh-Pansare93",
+        "githubUrl": "https://github.com/Siddesh-Pansare93",
+        "linkedinUrl": "https://linkedin.com/in/siddeshpansare93",
+        "resumeText": "Download Resume ↓",
+        "resumeUrl": "#"
+    },
+    "footer": {
+        "name": "Siddesh Pansare",
+        "year": "2026",
+        "links": [
+            "About",
+            "Projects",
+            "Skills",
+            "Contact"
+        ]
+    },
+    "achievements": {
+        "stats": [
+            {
+                "value": "2",
+                "label": "Hackathon Wins"
+            },
+            {
+                "value": "5",
+                "label": "Finalist Positions"
+            },
+            {
+                "value": "9.0",
+                "label": "CGPA"
+            }
+        ]
+    }
+}

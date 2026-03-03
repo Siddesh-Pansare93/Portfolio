@@ -1,43 +1,31 @@
-import { Github, Linkedin } from "lucide-react";
+"use client";
+
+import data from "@/data/portfolio.json";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-transparent relative overflow-hidden text-text-tertiary">
-            {/* Top gradient hairline */}
-            <div
-                className="absolute top-0 inset-x-0 h-[1px]"
-                style={{
-                    borderImage: "linear-gradient(to right, transparent, var(--border-subtle), transparent) 1",
-                    borderTop: "1px solid"
-                }}
-            />
+        <footer className="w-full bg-[#040609] py-8 pt-12 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-border-subtle to-transparent opacity-50"></div>
 
-            <div className="max-w-7xl mx-auto px-[64px] py-[32px] flex flex-col md:flex-row items-center justify-between gap-6 max-md:px-6">
-                {/* Left */}
-                <div className="font-mono text-[12px] order-3 md:order-1">
-                    Siddesh Pansare · {new Date().getFullYear()}
+            <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                <div className="flex items-center gap-1 font-mono text-[12px] text-text-tertiary">
+                    <span className="opacity-50">©</span>
+                    <span className="text-text-primary">{data.footer.year}</span>
+                    <span className="opacity-50 ml-2">{data.footer.name}. All rights reserved.</span>
                 </div>
 
-                {/* Center */}
-                <div className="flex flex-wrap justify-center items-center gap-[32px] font-body text-[12px] order-1 md:order-2">
-                    {["About", "Projects", "Skills", "Contact"].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="hover:text-text-primary transition-colors duration-200"
-                        >
-                            {item}
-                        </a>
+                <nav className="flex gap-6 font-mono text-[11px] text-text-tertiary uppercase tracking-wider">
+                    {data.footer.links.map(link => (
+                        <a key={link} href={`#${link.toLowerCase()}`} className="hover:text-text-primary transition-colors">{link}</a>
                     ))}
-                </div>
+                </nav>
 
-                {/* Right */}
-                <div className="flex items-center gap-4 order-2 md:order-3">
-                    <a href="https://github.com/Siddesh-Pansare93" target="_blank" rel="noreferrer" className="hover:text-text-primary transition-colors duration-200" aria-label="GitHub">
-                        <Github size={18} />
+                <div className="flex gap-4 items-center">
+                    <a href={data.contact.githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-text-tertiary hover:text-text-primary transition-colors">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
-                    <a href="https://linkedin.com/in/siddeshpansare93" target="_blank" rel="noreferrer" className="hover:text-text-primary transition-colors duration-200" aria-label="LinkedIn">
-                        <Linkedin size={18} />
+                    <a href={data.contact.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-text-tertiary hover:text-text-primary transition-colors">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
                 </div>
             </div>

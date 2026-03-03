@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { registerGSAP } from "@/lib/utils";
-import { PORTFOLIO_DATA } from "@/lib/data";
+import data from "@/data/portfolio.json";
 
 export default function Experience() {
     const containerRef = useRef<HTMLElement>(null);
@@ -51,7 +51,7 @@ export default function Experience() {
 
     return (
         <section id="experience" ref={containerRef} className="py-[120px] px-6 max-w-[900px] mx-auto overflow-x-hidden">
-            <div className="font-mono text-[11px] text-text-tertiary mb-12">02</div>
+            <div className="font-mono text-[11px] text-text-tertiary mb-12">{data.experience.sectionNumber}</div>
 
             <div className="flex">
                 <div className="w-[24px] relative flex-shrink-0 flex justify-center mt-2">
@@ -60,48 +60,32 @@ export default function Experience() {
                     </div>
 
                     <div className="absolute top-8 w-[10px] h-[10px] rounded-full bg-accent-primary" />
-                    <div className="absolute top-[400px] w-[10px] h-[10px] rounded-full border border-border-subtle bg-bg-base z-10" />
+                    {data.experience.items.length > 1 && (
+                        <div className={`absolute w-[10px] h-[10px] rounded-full border border-border-subtle bg-bg-base z-10`} style={{ top: '400px' }} />
+                    )}
                     <div className="absolute top-full -translate-y-4 font-mono text-[10px] text-text-tertiary -rotate-90 transform origin-left whitespace-nowrap left-[12px]">Started Here</div>
                 </div>
 
                 <div className="flex-1 pl-8 pb-[80px]">
-                    {/* Card 1 */}
-                    <div className="exp-card bg-bg-surface border-l-2 border-border-subtle hover:border-accent-primary p-[32px] rounded-r-2xl flex flex-col transition-colors duration-300 mb-16 max-w-[650px]">
-                        <div className="flex justify-between items-start mb-2 flex-col sm:flex-row gap-2">
-                            <h3 className="text-[20px] font-display font-bold text-text-primary">Kstars Technology LLP</h3>
-                            <span className="font-mono text-[12px] text-text-tertiary shrink-0">Jan 2026–Present</span>
+                    {data.experience.items.map((job, index) => (
+                        <div key={job.id} className={`exp-card bg-bg-surface border-l-2 border-border-subtle hover:border-accent-primary p-[32px] rounded-r-2xl flex flex-col transition-colors duration-300 max-w-[650px] ${index > 0 ? 'mt-12 md:mt-24' : 'mb-16'}`}>
+                            <div className="flex justify-between items-start mb-2 flex-col sm:flex-row gap-2">
+                                <h3 className="text-[20px] font-display font-bold text-text-primary">{job.company}</h3>
+                                <span className="font-mono text-[12px] text-text-tertiary shrink-0">{job.period}</span>
+                            </div>
+                            <div className="text-[14px] font-medium text-accent-primary mb-2">{job.role}</div>
+                            <div className="font-mono text-[12px] text-text-tertiary pt-[8px] mb-6">{job.tech}</div>
+
+                            <ul className="flex flex-col gap-4">
+                                {job.highlights.map((item, i) => (
+                                    <li key={i} className="flex gap-3 text-text-secondary text-[15px] leading-[1.6]">
+                                        <span className="w-1 h-1 bg-accent-primary shrink-0 mt-[10px]"></span>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        <div className="text-[14px] font-medium text-accent-primary mb-2">Lead Flutter Developer</div>
-                        <div className="font-mono text-[12px] text-text-tertiary pt-[8px] mb-6">Flutter · Clean Architecture · SOLID · React · PWA</div>
-
-                        <ul className="flex flex-col gap-4">
-                            {PORTFOLIO_DATA.experience[0].highlights.map((item, i) => (
-                                <li key={i} className="flex gap-3 text-text-secondary text-[15px] leading-[1.6]">
-                                    <span className="w-1 h-1 bg-accent-primary shrink-0 mt-[10px]"></span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Card 2 */}
-                    <div className="exp-card bg-bg-surface border-l-2 border-border-subtle hover:border-accent-primary p-[32px] rounded-r-2xl flex flex-col transition-colors duration-300 max-w-[650px] mt-12 md:mt-24">
-                        <div className="flex justify-between items-start mb-2 flex-col sm:flex-row gap-2">
-                            <h3 className="text-[20px] font-display font-bold text-text-primary">DevionX Technologies</h3>
-                            <span className="font-mono text-[12px] text-text-tertiary shrink-0">Jun 2025–Dec 2025</span>
-                        </div>
-                        <div className="text-[14px] font-medium text-accent-primary mb-2">Backend & AI Engineer Intern</div>
-                        <div className="font-mono text-[12px] text-text-tertiary pt-[8px] mb-6">Redis · BullMQ · Gemini API · OCR · EasyOCR · Node.js</div>
-
-                        <ul className="flex flex-col gap-4">
-                            {PORTFOLIO_DATA.experience[1].highlights.map((item, i) => (
-                                <li key={i} className="flex gap-3 text-text-secondary text-[15px] leading-[1.6]">
-                                    <span className="w-1 h-1 bg-accent-primary shrink-0 mt-[10px]"></span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

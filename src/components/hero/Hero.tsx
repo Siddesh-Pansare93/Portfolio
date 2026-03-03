@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import MagneticButton from "@/components/shared/MagneticButton";
 import { registerGSAP } from "@/lib/utils";
+import data from "@/data/portfolio.json";
 
 export default function Hero() {
     const containerRef = useRef<HTMLElement>(null);
@@ -93,7 +94,7 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="relative flex flex-col justify-end px-6 md:px-[64px] pb-[64px] md:pb-[80px] bg-bg-base overflow-hidden"
+            className="relative flex flex-col justify-center pt-[70px] px-6 md:px-[64px] pb-[64px] md:pb-[80px] bg-bg-base overflow-hidden"
             style={{ minHeight: "100svh" }}
         >
             {/* BACKGROUND */}
@@ -113,26 +114,26 @@ export default function Hero() {
 
                     <div className="micro-label font-mono text-[11px] text-text-tertiary tracking-[0.1em] flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-success rounded-full flex-shrink-0" />
-                        SWE · AVAILABLE MAR 2026
+                        {data.hero.label}
                     </div>
 
                     <h1 className="flex flex-col font-display font-extrabold text-text-primary tracking-[-0.04em]" style={{ fontSize: "clamp(5rem, 13vw, 11rem)", lineHeight: 0.88 }}>
                         <span className="reveal-container block">
-                            <span className="reveal-text">SIDDESH</span>
+                            <span className="reveal-text">{data.hero.firstName}</span>
                         </span>
                         <span className="reveal-container block">
-                            <span className="reveal-text">PANSARE</span>
+                            <span className="reveal-text">{data.hero.lastName}</span>
                         </span>
                     </h1>
 
                     <h2 className="role-line font-display text-[20px] font-normal text-text-secondary mt-2">
-                        AI-Native Full-Stack Engineer
+                        {data.hero.role}
                     </h2>
 
                     <div className="hairline-divider h-[1px] w-full max-w-[480px] bg-border-subtle my-2" />
 
                     <p className="hero-desc font-body text-[18px] text-text-secondary" style={{ lineHeight: 1.7, maxWidth: "520px" }}>
-                        Building production systems at the intersection of real-time infrastructure and autonomous AI agents. Ships to 1000+ daily users. Deploys to production.
+                        {data.hero.description}
                     </p>
 
                     <div className="flex items-center gap-3 mt-4">
@@ -141,33 +142,28 @@ export default function Hero() {
                             className="hero-cta h-[48px] px-7 rounded-[10px] text-white font-display text-[15px] font-semibold border border-transparent shadow-[0_4px_20px_rgba(110,142,255,0.25)] hover:shadow-[0_8px_32px_rgba(110,142,255,0.4)] transition-shadow duration-300"
                             style={{ background: "linear-gradient(135deg, #6E8EFF, #A78BFA)" }}
                         >
-                            View My Work
+                            {data.hero.ctaPrimary}
                         </MagneticButton>
 
                         <MagneticButton
-                            href="https://github.com/Siddesh-Pansare93"
+                            href={data.contact.githubUrl}
                             target="_blank"
                             className="hero-cta h-[48px] px-7 rounded-[10px] text-text-secondary font-display text-[15px] font-medium border border-border-subtle hover:border-border-hover hover:text-text-primary transition-colors duration-300"
                         >
-                            GitHub ↗
+                            {data.hero.ctaSecondary}
                         </MagneticButton>
                     </div>
 
                     <div className="hero-stats flex items-center gap-4 mt-8 font-mono text-[13px] text-text-tertiary">
-                        <div className="flex gap-2 items-baseline">
-                            <span className="text-[16px] font-medium text-text-primary">48+</span>
-                            <span className="text-[11px] text-text-tertiary uppercase tracking-wider">Repos</span>
-                        </div>
-                        <span className="opacity-50">·</span>
-                        <div className="flex gap-2 items-baseline">
-                            <span className="text-[16px] font-medium text-text-primary">1,000+</span>
-                            <span className="text-[11px] text-text-tertiary uppercase tracking-wider">Daily Users</span>
-                        </div>
-                        <span className="opacity-50">·</span>
-                        <div className="flex gap-2 items-baseline">
-                            <span className="text-[16px] font-medium text-text-primary">9.0</span>
-                            <span className="text-[11px] text-text-tertiary uppercase tracking-wider">CGPA</span>
-                        </div>
+                        {data.hero.stats.map((stat, idx) => (
+                            <div key={idx} className="flex gap-2 items-baseline">
+                                <div className="flex gap-2 items-baseline">
+                                    <span className="text-[16px] font-medium text-text-primary">{stat.value}</span>
+                                    <span className="text-[11px] text-text-tertiary uppercase tracking-wider">{stat.label}</span>
+                                </div>
+                                {idx < data.hero.stats.length - 1 && <span className="opacity-50 ml-4">·</span>}
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -181,12 +177,12 @@ export default function Hero() {
                                 <div className="w-3 h-3 rounded-full bg-[#FEBC2E]"></div>
                                 <div className="w-3 h-3 rounded-full bg-[#28C840]"></div>
                             </div>
-                            <div className="font-mono text-[12px] text-text-tertiary mx-auto mr-auto pl-4">peer-connect.ts</div>
+                            <div className="font-mono text-[12px] text-text-tertiary mx-auto mr-auto pl-4">{data.hero.codeSnippet.filename}</div>
                         </div>
 
                         {/* Body */}
                         <div className="p-5 font-mono text-[12px] leading-[1.8] whitespace-pre-wrap flex flex-col">
-                            <div className="text-text-tertiary">// WebRTC signaling -1000+ concurrent peers</div>
+                            <div className="text-text-tertiary">{data.hero.codeSnippet.comment1}</div>
                             <div className="h-[21px]"></div>
                             <div>
                                 <span className="text-[#A78BFA]">const </span>
@@ -206,7 +202,7 @@ export default function Hero() {
                                 <span className="text-text-primary">)</span>
                             </div>
                             <div className="h-[21px]"></div>
-                            <div className="text-text-tertiary">// Match users anonymously</div>
+                            <div className="text-text-tertiary">{data.hero.codeSnippet.comment2}</div>
                             <div>
                                 <span className="text-text-primary">socket.</span>
                                 <span className="text-[#6E8EFF]">on</span>

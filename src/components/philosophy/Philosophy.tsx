@@ -2,26 +2,9 @@
 
 import { motion } from "framer-motion";
 import { blurToFocus } from "@/lib/utils";
+import data from "@/data/portfolio.json";
 
 export default function Philosophy() {
-    const principles = [
-        {
-            id: "01",
-            title: "Systems Over Symptoms",
-            text: "Quick fixes create technical debt. I focus on building resilient pipelines and architectures that prevent problems rather than treating them after they appear."
-        },
-        {
-            id: "02",
-            title: "Latency is the Enemy",
-            text: "Whether it's WebRTC peer connections or AI agent thought loops, sub-100ms response times aren't a luxury—they are the baseline for immersive experiences."
-        },
-        {
-            id: "03",
-            title: "Autonomous by Default",
-            text: "Using tools like LangChain and MCP isn't about slapping an LLM wrapper on an API. It's about orchestration, dynamic context handling, and building tools that reason."
-        }
-    ];
-
     return (
         <section className="py-[140px] px-6 bg-bg-surface overflow-hidden">
             <div className="max-w-[1200px] mx-auto flex flex-col items-center relative">
@@ -32,19 +15,19 @@ export default function Philosophy() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="w-full flex flex-col items-center text-center"
                 >
-                    <div className="font-mono text-[11px] text-text-tertiary mb-10 w-full text-center">05</div>
+                    <div className="font-mono text-[11px] text-text-tertiary mb-10 w-full text-center">{data.philosophy.sectionNumber}</div>
                     <h2
                         className="font-display font-bold text-text-primary max-w-[700px] tracking-tight leading-[1.1]"
                         style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
                     >
-                        Engineering is the art of making the complex feel inevitable.
+                        {data.philosophy.quote}
                     </h2>
                     <div className="w-[120px] h-[1px] bg-border-subtle mt-12 mb-20" />
                 </motion.div>
 
                 {/* THREE PRINCIPLES */}
                 <div className="w-full max-w-[760px] mx-auto flex flex-col">
-                    {principles.map((item, index) => (
+                    {data.philosophy.principles.map((item, index) => (
                         <motion.div
                             key={item.id}
                             initial={{ opacity: 0, filter: "blur(8px)", y: 16 }}

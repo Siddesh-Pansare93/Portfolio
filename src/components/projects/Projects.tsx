@@ -3,19 +3,18 @@
 import { motion } from "framer-motion";
 import { staggerContainer, scaleIn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
-import { PORTFOLIO_DATA } from "@/lib/data";
+import data from "@/data/portfolio.json";
 
 export default function Projects() {
-    const projects = PORTFOLIO_DATA.projects;
-    const featured = projects[0];
-    const defi = projects[1];
-    const skill = projects[2];
-    const smart = projects[3];
-    const kisaan = projects[4];
+    const featured = data.projects.items.featured;
+    const defi = data.projects.items.defi;
+    const skill = data.projects.items.skill;
+    const smart = data.projects.items.smart;
+    const kisaan = data.projects.items.kisaan;
 
     return (
         <section id="projects" className="py-[120px] px-6 max-w-[1200px] mx-auto overflow-hidden">
-            <div className="font-mono text-[11px] text-text-tertiary mb-8">03</div>
+            <div className="font-mono text-[11px] text-text-tertiary mb-8">{data.projects.sectionNumber}</div>
 
             {/* FEATURED PROJECT */}
             <motion.div
@@ -29,7 +28,7 @@ export default function Projects() {
                 <div className="w-full md:w-[55%] p-10 md:p-[56px] flex flex-col justify-between shrink-0 z-10 bg-bg-surface relative">
                     <div>
                         <div className="font-mono text-[11px] text-text-tertiary tracking-[0.08em] mb-6 inline-block uppercase">
-                            PRODUCTION · 1,000+ DAU
+                            {featured.badge}
                         </div>
                         <h3 className="font-display text-[32px] md:text-[36px] font-bold text-text-primary leading-[1.1] mb-6">
                             {featured.title}
@@ -46,7 +45,7 @@ export default function Projects() {
                         <div className="flex items-center gap-2 mt-8 font-body text-[14px]">
                             <a href={featured.link} target="_blank" rel="noreferrer" className="text-text-primary underline decoration-accent-primary hover:text-accent-primary transition-colors hover:decoration-solid">View Project →</a>
                             <span className="text-text-tertiary">/</span>
-                            <a href={featured.github} target="_blank" rel="noreferrer" className="text-text-primary underline decoration-border-subtle hover:text-text-secondary transition-colors hover:decoration-solid">GitHub →</a>
+                            <a href={data.contact.githubUrl} target="_blank" rel="noreferrer" className="text-text-primary underline decoration-border-subtle hover:text-text-secondary transition-colors hover:decoration-solid">GitHub →</a>
                         </div>
                     </div>
                 </div>
@@ -81,11 +80,6 @@ export default function Projects() {
                         <text x="32" y="38" fill="var(--text-tertiary)" fontFamily="var(--font-mono)" fontSize="3">YOU</text>
                         <text x="72" y="28" fill="var(--text-tertiary)" fontFamily="var(--font-mono)" fontSize="3">PEER</text>
                     </svg>
-
-                    {/* Counter Terminal */}
-                    <div className="absolute bottom-6 right-8 font-mono text-[10px] text-success">
-                        <span className="opacity-75">&gt; peers connected: </span><span className="font-bold">1,247</span>
-                    </div>
                 </div>
             </motion.div>
 
@@ -119,7 +113,7 @@ export default function Projects() {
                         <p className="font-body text-[15px] text-text-secondary leading-relaxed mb-4">{defi.description}</p>
                         <div className="font-mono text-[11px] text-text-tertiary uppercase mt-auto flex items-center justify-between">
                             <span>{defi.tech.split(' / ').join(' · ')}</span>
-                            <a href={defi.github} target="_blank" rel="noreferrer" className="shrink-0 p-2 hover:bg-bg-surface rounded-md transition-colors text-text-secondary hover:text-text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded"><ArrowUpRight size={16} /></a>
+                            <a href={data.contact.githubUrl} target="_blank" rel="noreferrer" className="shrink-0 p-2 hover:bg-bg-surface rounded-md transition-colors text-text-secondary hover:text-text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded"><ArrowUpRight size={16} /></a>
                         </div>
                     </div>
 
@@ -160,7 +154,7 @@ export default function Projects() {
                     <div className="mt-auto font-mono text-[11px] text-text-tertiary uppercase">
                         {skill.tech.split(' / ').join(' · ')}
                     </div>
-                    <a href={skill.github} target="_blank" rel="noreferrer" className="absolute top-6 right-6 p-2 shrink-0 text-text-tertiary hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
+                    <a href={data.contact.githubUrl} target="_blank" rel="noreferrer" className="absolute top-6 right-6 p-2 shrink-0 text-text-tertiary hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
                         <ArrowUpRight size={16} />
                         <span className="sr-only">View on Github</span>
                     </a>
@@ -179,7 +173,7 @@ export default function Projects() {
                     <div className="mt-auto font-mono text-[11px] text-text-tertiary uppercase">
                         {smart.tech.split(' / ').join(' · ')}
                     </div>
-                    <a href={smart.github} target="_blank" rel="noreferrer" className="absolute top-6 right-6 p-2 shrink-0 text-text-tertiary hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
+                    <a href={data.contact.githubUrl} target="_blank" rel="noreferrer" className="absolute top-6 right-6 p-2 shrink-0 text-text-tertiary hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
                         <ArrowUpRight size={16} />
                         <span className="sr-only">View on Github</span>
                     </a>
@@ -200,7 +194,7 @@ export default function Projects() {
                         <div className="mt-auto font-mono text-[11px] text-text-tertiary uppercase">
                             {kisaan.tech.split(' / ').join(' · ')}
                         </div>
-                        <a href={kisaan.github} target="_blank" rel="noreferrer" className="absolute top-6 right-6 p-2 shrink-0 text-text-tertiary hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
+                        <a href={data.contact.githubUrl} target="_blank" rel="noreferrer" className="absolute top-6 right-6 p-2 shrink-0 text-text-tertiary hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
                             <ArrowUpRight size={16} />
                             <span className="sr-only">View on Github</span>
                         </a>
@@ -222,8 +216,8 @@ export default function Projects() {
             </motion.div>
 
             <div className="w-full flex justify-center mt-16 pb-[32px]">
-                <a href="https://github.com/Siddesh-Pansare93" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-tertiary hover:text-text-primary underline decoration-text-tertiary hover:decoration-accent-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
-                    View all 48 repositories on GitHub →
+                <a href={data.projects.githubUrl} target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-tertiary hover:text-text-primary underline decoration-text-tertiary hover:decoration-accent-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded">
+                    {data.projects.githubText}
                 </a>
             </div>
         </section>
