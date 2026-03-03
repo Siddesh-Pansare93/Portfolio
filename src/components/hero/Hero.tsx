@@ -53,7 +53,7 @@ export default function Hero() {
                     </p>
 
                     <div className="flex items-center gap-3 mt-4">
-                        <MagneticButton href="#projects" className="hero-cta h-[48px] px-7 rounded-[10px] text-white font-display text-[15px] font-semibold border border-transparent shadow-[0_4px_20px_rgba(110,142,255,0.25)] hover:shadow-[0_8px_32px_rgba(110,142,255,0.4)] transition-shadow duration-300" style={{ background: "var(--accent-gradient)" }}>
+                        <MagneticButton href="#projects" className="hero-cta h-[48px] px-7 rounded-[10px] text-bg-base font-display text-[15px] font-semibold border border-transparent shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_32px_rgba(255,255,255,0.25)] transition-shadow duration-300" style={{ background: "var(--accent-gradient)" }}>
                             {data.hero.ctaPrimary}
                         </MagneticButton>
                         <MagneticButton href={data.contact.githubUrl} target="_blank" className="hero-cta h-[48px] px-7 rounded-[10px] text-text-secondary font-display text-[15px] font-medium border border-border-subtle hover:border-border-hover hover:text-text-primary transition-colors duration-300">
@@ -77,10 +77,10 @@ export default function Hero() {
                 <div className="hero-right hidden lg:block w-[35%] ml-auto max-w-[380px]">
                     <div className="w-[380px] bg-bg-elevated border border-border-subtle rounded-[14px] overflow-hidden shadow-2xl">
                         <div className="px-4 py-3 bg-bg-terminal border-b border-border-subtle flex items-center gap-4">
-                            <div className="flex gap-1.5 flex-shrink-0">
-                                <div className="w-3 h-3 rounded-full bg-ui-close"></div>
-                                <div className="w-3 h-3 rounded-full bg-ui-min"></div>
-                                <div className="w-3 h-3 rounded-full bg-ui-max"></div>
+                            <div className="flex gap-1.5 flex-shrink-0 opacity-50">
+                                <div className="w-3 h-3 rounded-full bg-border-subtle"></div>
+                                <div className="w-3 h-3 rounded-full bg-border-subtle"></div>
+                                <div className="w-3 h-3 rounded-full bg-border-subtle"></div>
                             </div>
                             <div className="font-mono text-[12px] text-text-tertiary mx-auto mr-auto pl-4">{data.hero.codeSnippet.filename}</div>
                         </div>

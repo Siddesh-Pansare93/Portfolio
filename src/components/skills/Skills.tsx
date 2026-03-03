@@ -29,10 +29,10 @@ export default function Skills() {
                     className="lg:col-span-3 rounded-[16px] p-6 lg:p-8 flex flex-col relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-4 focus-visible:rounded"
                     style={{
                         background: "var(--bg-elevated)",
-                        border: "1px solid rgba(110,142,255,0.25)"
+                        border: "1px solid var(--border-hover)"
                     }}
                 >
-                    <div className="absolute bottom-0 right-0 w-full h-[60%] pointer-events-none" style={{ background: "linear-gradient(to top left, rgba(110,142,255,0.04), transparent)" }}></div>
+                    <div className="absolute bottom-0 right-0 w-full h-[60%] pointer-events-none" style={{ background: "linear-gradient(to top left, var(--accent-glow), transparent)" }}></div>
                     <h3 className="font-display text-[17px] font-semibold text-text-primary mb-5 z-10">{data.skills.categories.ai.title}</h3>
                     <div className="flex flex-wrap gap-2 mb-6 z-10 w-full">
                         {data.skills.categories.ai.tags.map((tag) => (
