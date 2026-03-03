@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <style>
+    .bg { fill: #FAFAFA; }
+    .fg { fill: #111111; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0A0A0A; }
+      .fg { fill: #EDEDED; }
+    }
+  </style>
+  <rect width="256" height="256" rx="56" class="bg" />
+  <!-- Abstract 'S' Monogram (Code lines) -->
+  <rect x="76" y="76" width="52" height="24" rx="4" class="fg" />
+  <rect x="76" y="116" width="104" height="24" rx="4" class="fg" />
+  <rect x="128" y="156" width="52" height="24" rx="4" class="fg" />
+</svg>
