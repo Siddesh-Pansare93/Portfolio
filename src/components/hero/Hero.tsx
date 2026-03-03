@@ -29,18 +29,20 @@ export default function Hero() {
     return (
         <section ref={containerRef} className="relative flex flex-col justify-center pt-[70px] px-6 md:px-[64px] pb-[64px] md:pb-[80px] bg-bg-base overflow-hidden" style={{ minHeight: "100svh" }}>
             <div className="absolute inset-0 z-0 bg-noise opacity-[0.03] pointer-events-none" />
+            <div className="absolute inset-0 z-0 bg-grid opacity-20 pointer-events-none" />
+
             <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 40% at 0% 0%, var(--accent-glow), transparent)" }} />
 
             <div className="relative z-10 max-w-[1200px] w-full mx-auto flex items-end">
                 <div className="w-full lg:w-[65%] flex flex-col items-start gap-4">
-                    <div className="micro-label font-mono text-[11px] text-text-tertiary tracking-[0.1em] flex items-center gap-2">
+                    <div className="micro-label font-mono text-[11px] text-text-tertiary tracking-[0.15em] uppercase flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-success rounded-full flex-shrink-0" />
                         {data.hero.label}
                     </div>
 
                     <h1 className="flex flex-col font-display font-extrabold text-text-primary tracking-[-0.04em]" style={{ fontSize: "clamp(5rem, 13vw, 11rem)", lineHeight: 0.88 }}>
-                        <span className="reveal-container block"><span className="reveal-text">{data.hero.firstName}</span></span>
-                        <span className="reveal-container block"><span className="reveal-text">{data.hero.lastName}</span></span>
+                        <span className="reveal-container block"><span className="reveal-text bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">{data.hero.firstName}</span></span>
+                        <span className="reveal-container block"><span className="reveal-text bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/30">{data.hero.lastName}</span></span>
                     </h1>
 
                     <h2 className="role-line font-display text-[20px] font-normal text-text-secondary mt-2">
@@ -74,13 +76,13 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="hero-right hidden lg:block w-[35%] ml-auto max-w-[380px]">
-                    <div className="w-[380px] bg-bg-elevated border border-border-subtle rounded-[14px] overflow-hidden shadow-2xl">
-                        <div className="px-4 py-3 bg-bg-terminal border-b border-border-subtle flex items-center gap-4">
-                            <div className="flex gap-1.5 flex-shrink-0 opacity-50">
-                                <div className="w-3 h-3 rounded-full bg-border-subtle"></div>
-                                <div className="w-3 h-3 rounded-full bg-border-subtle"></div>
-                                <div className="w-3 h-3 rounded-full bg-border-subtle"></div>
+                <div className="hero-right hidden lg:block w-[35%] ml-auto max-w-[380px] z-10">
+                    <div className="w-[380px] bg-[#111111]/40 backdrop-blur-2xl border border-white/10 rounded-[14px] overflow-hidden shadow-2xl">
+                        <div className="px-4 py-3 bg-white/5 border-b border-white/5 flex items-center gap-4">
+                            <div className="flex gap-1.5 flex-shrink-0">
+                                <div className="w-3 h-3 rounded-full bg-ui-close opacity-90 shadow-[0_0_10px_rgba(255,95,87,0.4)]"></div>
+                                <div className="w-3 h-3 rounded-full bg-ui-min opacity-90 shadow-[0_0_10px_rgba(254,188,46,0.4)]"></div>
+                                <div className="w-3 h-3 rounded-full bg-ui-max opacity-90 shadow-[0_0_10px_rgba(40,200,64,0.4)]"></div>
                             </div>
                             <div className="font-mono text-[12px] text-text-tertiary mx-auto mr-auto pl-4">{data.hero.codeSnippet.filename}</div>
                         </div>
