@@ -62,7 +62,7 @@ export default function About() {
 
                     {/* Terminal Stat Card */}
                     <div className="w-full max-w-[380px] bg-bg-elevated border border-border-subtle rounded-[14px] overflow-hidden">
-                        <div className="px-4 py-3 bg-[#0d1219] border-b border-border-subtle font-mono text-[12px] text-text-tertiary flex items-center">
+                        <div className="px-4 py-3 bg-bg-terminal border-b border-border-subtle font-mono text-[12px] text-text-tertiary flex items-center">
                             ~/stats <span className="ml-[1px] w-[6px] h-[14px] bg-text-tertiary animate-pulse inline-block" />
                         </div>
                         <div className="p-6 font-mono text-[13px] text-text-secondary leading-[2]">

@@ -4,7 +4,7 @@ import data from "@/data/portfolio.json";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#040609] py-8 pt-12 relative overflow-hidden">
+        <footer className="w-full bg-bg-footer py-8 pt-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-border-subtle to-transparent opacity-50"></div>
 
             <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">

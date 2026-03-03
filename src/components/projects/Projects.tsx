@@ -51,7 +51,7 @@ export default function Projects() {
                 </div>
 
                 {/* Right Panel Visual */}
-                <div className="w-full md:w-[45%] bg-[#0A0E17] relative overflow-hidden hidden md:flex items-center justify-center shrink-0">
+                <div className="w-full md:w-[45%] bg-bg-panel1 relative overflow-hidden hidden md:flex items-center justify-center shrink-0">
 
                     {/* SVG Network Graph */}
                     <svg className="w-full h-full absolute inset-0 transform scale-100 group-hover:scale-[1.04] transition-transform duration-800 ease-[cubic-bezier(0.25,1,0.5,1)]" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style={{ animation: "drift 6s infinite ease-in-out" }}>
@@ -69,7 +69,7 @@ export default function Projects() {
                             <line x1="30" y1="40" x2="20" y2="60" />
                             <line x1="50" y1="50" x2="80" y2="60" />
                         </g>
-                        <g fill="#FFF">
+                        <g fill="var(--text-primary)">
                             <circle cx="30" cy="40" r="1.5" />
                             <circle cx="50" cy="50" r="1.5" style={{ animation: "peerPulse 2s infinite" }} />
                             <circle cx="70" cy="30" r="1.5" />
@@ -117,7 +117,7 @@ export default function Projects() {
                         </div>
                     </div>
 
-                    <div className="w-full md:w-[40%] bg-[#0f141d] relative overflow-hidden flex items-center justify-center p-8 shrink-0">
+                    <div className="w-full md:w-[40%] bg-bg-panel2 relative overflow-hidden flex items-center justify-center p-8 shrink-0">
                         {/* SVG Visualization */}
                         <svg viewBox="0 0 200 100" className="w-full h-full opacity-60">
                             <g stroke="var(--text-tertiary)" strokeWidth="1" fill="none">
@@ -199,7 +199,7 @@ export default function Projects() {
                             <span className="sr-only">View on Github</span>
                         </a>
                     </div>
-                    <div className="w-full md:w-1/2 p-6 flex flex-col items-center justify-center bg-[#0d1219]">
+                    <div className="w-full md:w-1/2 p-6 flex flex-col items-center justify-center bg-bg-terminal">
                         {/* ML Diagram CSS layout */}
                         <div className="flex items-center justify-center w-full max-w-[400px] h-full gap-2 font-mono text-[9px] sm:text-[10px] text-text-tertiary uppercase tracking-wider overflow-x-auto">
                             <div className="px-3 py-2 border border-border-subtle rounded-md bg-bg-surface shrink-0">Raw Data</div>

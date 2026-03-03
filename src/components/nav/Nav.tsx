@@ -54,7 +54,7 @@ export default function Nav() {
             <nav
                 ref={navRef}
                 className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "h-16 bg-[#080B11]/85 backdrop-blur-[20px] saturate-[180%] border-b border-border-subtle"
+                    ? "h-16 bg-bg-nav backdrop-blur-[20px] saturate-[180%] border-b border-border-subtle"
                     : "h-16 bg-transparent border-b border-transparent"
                     }`}
             >
